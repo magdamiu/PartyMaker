@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PartyMaker</string>
+    <string name="google">Login with</string>
+    <string name="tvUsername">Name: </string>
+    <string name="tvMainTitle">Party Maker</string>
+    <string name="tvMainDescription">Join us and build your relationship with others</string>
+</resources>
