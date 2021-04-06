@@ -1,0 +1,2 @@
+# PartyMaker
+Bachelor degree UPIT
