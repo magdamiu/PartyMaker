@@ -4,4 +4,6 @@
     <string name="tvUsername">Name: </string>
     <string name="tvMainTitle">Party Maker</string>
     <string name="tvMainDescription">Join us and build your relationship with others</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
