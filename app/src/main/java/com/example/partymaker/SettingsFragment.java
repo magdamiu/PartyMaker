@@ -1,12 +1,16 @@
 package com.example.partymaker;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,6 +19,7 @@ import android.view.ViewGroup;
  */
 public class SettingsFragment extends Fragment {
 
+    private GoogleSignInClient googleSignInClient;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,8 +29,11 @@ public class SettingsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private Button buttonSignOut;
+
     public SettingsFragment() {
         // Required empty public constructor
+
     }
 
     /**
@@ -59,6 +67,25 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        googleSignInClient = CustomGoogleSignIn.getGoogleSignClient(getActivity());
+
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        buttonSignOut = view.findViewById(R.id.buttonSignOut);
+        buttonSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
+        return view;
+    }
+
+    private void signOut() {
+        googleSignInClient.signOut()
+                .addOnCompleteListener(getActivity(), (task) -> {
+                    Toast.makeText(getActivity(), "Successfully signed out!", Toast.LENGTH_SHORT);
+                    startActivity(new Intent(getActivity(), MainActivity.class));
+                    getActivity().finish();
+                });
     }
 }

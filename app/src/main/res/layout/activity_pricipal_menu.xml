@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginBottom="500dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
-        android:layout_marginBottom="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -34,40 +34,36 @@
             tools:layout_editor_absoluteX="165dp"
             tools:layout_editor_absoluteY="325dp" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="#E11C1C"
-            android:text="Sign out"
-            tools:ignore="MissingConstraints" />
+        <!-- <Button
+             android:id="@+id/button"
+             android:layout_width="120dp"
+             android:layout_height="35dp"
+             android:layout_gravity="center"
+             android:layout_marginBottom="20dp"
+             android:background="#E11C1C"
+             android:text="Sign out"
+             tools:ignore="MissingConstraints" />-->
     </LinearLayout>
 
 
-
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:id="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav">
-    </FrameLayout>
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottomNav"
-            app:layout_constraintTop_toBottomOf="@id/frameLayout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@color/colorPrimary"
-            app:menu="@menu/bottom_nav_menu"
-            app:itemIconTint="@color/bottom_nav_item_selector"
-            app:itemTextColor="@color/bottom_nav_item_selector"
-            app:labelVisibilityMode="labeled" />
-
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/bottom_nav_item_selector"
+        app:itemTextColor="@color/bottom_nav_item_selector"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameLayout"
+        app:menu="@menu/bottom_nav_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

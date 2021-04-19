@@ -6,4 +6,7 @@
     <string name="tvMainDescription">Join us and build your relationship with others</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chat_fragment">Chat Fragment</string>
+    <string name="settings_fragment">Settings Fragment</string>
+    <string name="home_fragment">Home Fragment</string>
 </resources>
